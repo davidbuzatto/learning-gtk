@@ -309,13 +309,13 @@ static gboolean onWindowKeyPressed( GtkEventControllerKey *controller, guint key
     if ( keyval >= GDK_KEY_0 && keyval <= GDK_KEY_9 ) {
         int v = keyval - GDK_KEY_0;
         char value[4];
-        snprintf( value, 2, "%d", v );
+        snprintf( value, 4, "%d", v );
         doDigitButtonAction( entry, current, value );
         return TRUE;
     } else if ( keyval >= GDK_KEY_KP_0 && keyval <= GDK_KEY_KP_9 ) {
         unsigned int v = keyval - GDK_KEY_KP_0;
         char value[4];
-        snprintf( value, 2, "%d", v );
+        snprintf( value, 4, "%d", v );
         doDigitButtonAction( entry, current, value );
         return TRUE;
     } else if ( keyval == GDK_KEY_period || keyval == GDK_KEY_KP_Decimal ) {
