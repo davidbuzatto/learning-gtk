@@ -57,7 +57,7 @@ static void activate( GtkApplication *app, gpointer user_data ) {
     gtk_window_set_title ( GTK_WINDOW( window ), "GTK4 Calc" );
     gtk_window_set_default_size( GTK_WINDOW( window ), 200, 200 );
 
-    // estilos
+    // css styles
     GtkCssProvider *provider = gtk_css_provider_new();
     gtk_css_provider_load_from_string(
         provider,
@@ -79,7 +79,6 @@ static void activate( GtkApplication *app, gpointer user_data ) {
         GTK_STYLE_PROVIDER_PRIORITY_APPLICATION
     );
 
-    // caixa vertical
     GtkWidget *vbox = gtk_box_new( GTK_ORIENTATION_VERTICAL, 8 );
     gtk_widget_set_margin_top( vbox, 12 );
     gtk_widget_set_margin_bottom( vbox, 12 );
@@ -98,8 +97,7 @@ static void activate( GtkApplication *app, gpointer user_data ) {
 
     gtk_widget_add_css_class( entryResult, "entry-result" );
     gtk_box_append( GTK_BOX(vbox), entryResult );
-
-    // grade para os botões
+    
     GtkWidget *grid = gtk_grid_new();
     gtk_grid_set_row_spacing( GTK_GRID(grid), 6 );
     gtk_grid_set_column_spacing( GTK_GRID(grid), 6 );
